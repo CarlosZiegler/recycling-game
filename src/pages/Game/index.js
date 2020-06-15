@@ -22,7 +22,6 @@ function Game() {
                 <img className="card" src={cardGrey} alt="card-yelow" />
                 <img className="card" src={cardGreen} alt="card-yelow" />
             </div>
-
         </div>
     )
 }
