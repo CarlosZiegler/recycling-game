@@ -1,0 +1,29 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    height: 100vh;
+}
+.title{
+    font-size:3rem;
+}
+.description{
+    color: #6D6D6D;
+    text-align:center;
+    margin: 10px 0;
+    padding: 0 30px;
+    font-size: 1.5rem;
+}
+.flyer{
+    width: 100%;
+    border-radius:15px;
+}
+.btn-primary{
+    color:white;
+    background: #0070BA;
+    padding:5px 30px;
+    border-radius:10px;
+    margin:10px 0;
+    font-size:2rem;
+  }
