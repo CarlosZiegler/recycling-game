@@ -7,13 +7,24 @@ import cardBrown from '../../assets/brown.png'
 import cardGrey from '../../assets/grey.png'
 import cardGreen from '../../assets/green.png'
 
+import { allGarbagesObjects } from '../../data/allGarbages'
+import { generateArrayAndRandomize } from '../../utils/helpers'
+
+
 import './style.css'
 
 function Game() {
+
+    const [garbageList, setGarbageList] = useState([])
+    const [garbage, setGarbage] = useState()
+
+    useEffect(() => {
+        setGarbageList(generateArrayAndRandomize(allGarbagesObjects))
+    }, [])
     return (
         <div className="container content-center">
             <div className="sidebar">
-                <Sidebar />
+                <Sidebar garbage={garbageList} />
             </div>
             <div className="card-container">
                 <img className="card" src={cardYellow} alt="card-yelow" />

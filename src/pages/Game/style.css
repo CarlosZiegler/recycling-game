@@ -16,6 +16,7 @@
     align-items: center;
     align-content: center;
     max-height: 700px;
+    min-width: 690px;
 }
 .card{
     width: 100%;
