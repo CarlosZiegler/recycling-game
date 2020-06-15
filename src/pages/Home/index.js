@@ -1,5 +1,5 @@
 import React from 'react'
-import FlyerImage from 'assets/flyer.png'
+import FlyerImage from '../../assets/flyer.png'
 
 import './styles.css'
 

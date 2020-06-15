@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import Home from 'pages/Home'
-import Game from 'pages/Game'
+import Home from '../src/pages/Home'
+import Game from '../src/pages/Game'
 
 export default function Routes() {
     return (
