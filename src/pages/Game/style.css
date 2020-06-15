@@ -1,0 +1,26 @@
+
+.content-center{
+    display: flex;
+    margin:0 auto;
+    justify-content:center;
+    align-self:center;
+    align-items:center;
+}
+.sidebar{
+    width:300px;
+}
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    max-height: 700px;
+}
+.card{
+    width: 100%;
+    max-width: 300px;
+    margin:10px;
+    border-radius: 15px;
+    box-shadow: 4px 6px 5px 0px rgba(168,168,168,1);
+}
