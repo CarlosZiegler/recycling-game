@@ -83,8 +83,8 @@ function Game() {
         }
         setShowResult(true)
         setTimeout(() => {
-            setShowResult(false)
             selectImageGarbage()
+            setShowResult(false)
         }, 2000);
 
     }
