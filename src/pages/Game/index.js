@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react'
+import Lottie from 'react-lottie'
 import Sidebar from '../../components/SideBar'
 
-import cardYellow from '../../assets/yellow.png'
-import cardBlue from '../../assets/blue.jpg'
-import cardBrown from '../../assets/brown.png'
-import cardGrey from '../../assets/grey.png'
-import cardGreen from '../../assets/green.png'
-
 import { allGarbagesObjects } from '../../data/allGarbages'
+import { CARDS } from '../../data/allCards'
 import { generateArrayAndRandomize } from '../../utils/helpers'
 
-
+import correctAnimationData from '../../assets/clear.json'
+import wrongAnimationData from '../../assets/banana-boy.json'
 
 import './style.css'
 
@@ -19,41 +16,33 @@ function Game() {
     const [garbageList, setGarbageList] = useState([])
     const [garbage, setGarbage] = useState()
     const [garbageIndex, setGarbageIndex] = useState(0)
-    const [isReady, setIsReady] = useState(false)
+    const [isDataLoaded, setIsDataLoaded] = useState(false)
     const [scoreTrue, setScoreTrue] = useState(0)
     const [scoreFalse, setScoreFalse] = useState(0)
+    const [showResult, setShowResult] = useState(false)
+    const [isTrue, setIsTrue] = useState(false)
 
-    const CARDS = [
-        {
-            category: 'glas',
-            image: cardGreen,
-        },
-        {
-            category: 'werkstoffe',
-            image: cardYellow,
-        },
-        {
-            category: 'papier',
-            image: cardBlue,
-        },
-        {
-            category: 'biogut',
-            image: cardBrown,
-        },
-        {
-            category: 'hausmull',
-            image: cardGrey,
-        },
-    ]
 
     useEffect(() => {
         setGarbageList(generateArrayAndRandomize(allGarbagesObjects))
-        setIsReady(true)
+        setIsDataLoaded(true)
     }, [])
 
     useEffect(() => {
         selectImageGarbage()
-    }, [isReady])
+    }, [isDataLoaded])
+
+    const defaultOptionsCorrectAnswer = {
+        loop: true,
+        autoplay: true,
+        animationData: correctAnimationData,
+    };
+    const defaultOptionsWrongAnswer = {
+        loop: true,
+        autoplay: true,
+        animationData: wrongAnimationData,
+    };
+
 
     const selectImageGarbage = () => {
 
@@ -70,9 +59,17 @@ function Game() {
     const checkAnswer = (category) => {
         if (category === garbage.category) {
             setScoreTrue(scoreTrue + 1)
+            setIsTrue(true)
+        } else {
+            setIsTrue(false)
         }
+        setShowResult(true)
         setScoreFalse(scoreFalse + 1)
-        selectImageGarbage()
+        setTimeout(() => {
+            setShowResult(false)
+            selectImageGarbage()
+        }, 2000);
+
     }
     return (
         <div className="container content-center">
@@ -80,7 +77,14 @@ function Game() {
                 <Sidebar garbage={garbage} score={scoreTrue} onclickHandler={selectImageGarbage} />
             </div>
             <div className="card-container">
-                {CARDS.map((card, index) => <img key={index} className="card" src={card.image} alt="card-yelow" onClick={() => checkAnswer(card.category)} />)}
+                {showResult &&
+                    <Lottie className="lottieFile" options={isTrue ? defaultOptionsCorrectAnswer : defaultOptionsWrongAnswer}
+                        height={"auto"}
+                        width={"700px"}
+                    />}
+
+                {!showResult && CARDS.map((card, index) => <img key={index} className="card" src={card.image} alt="card-yelow" onClick={() => checkAnswer(card.category)} />)}
+
             </div>
         </div>
     )
