@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Lottie from 'react-lottie'
+
 import Sidebar from '../../components/SideBar'
+import Card from '../../components/Card'
 
 import { allGarbagesObjects } from '../../data/allGarbages'
 import { CARDS } from '../../data/allCards'
@@ -83,7 +85,7 @@ function Game() {
                         width={"700px"}
                     />}
 
-                {!showResult && CARDS.map((card, index) => <img key={index} className="card" src={card.image} alt="card-yelow" onClick={() => checkAnswer(card.category)} />)}
+                {!showResult && CARDS.map((card, index) => <Card key={index} card={card} onclickHandler={checkAnswer} />)}
 
             </div>
         </div>

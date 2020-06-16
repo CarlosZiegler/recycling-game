@@ -12,7 +12,6 @@ function SideBar({ garbage, score, onclickHandler }) {
                 for this garbage:
             </p>
             <img src={garbage?.image} alt="Trash" className="random-image" />
-            <h4 className="timer-countdown">Timer: 5s</h4>
             <h3 className="score"> Score: {`${score}`}</h3>
             <button className="btn-primary btn" onClick={() => onclickHandler()}>Next</button>
         </div>

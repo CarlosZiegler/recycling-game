@@ -1,11 +1,8 @@
 import React from 'react'
 
-function Card() {
+function Card({ card, onclickHandler }) {
     return (
-        <div>
-            <h1>Ola</h1>
-        </div>
-    )
+        <img className="card" src={card?.image} alt="my Card" onClick={() => onclickHandler(card?.category)} />)
 }
 
 export default Card
