@@ -23,6 +23,29 @@ function Game() {
     const [scoreTrue, setScoreTrue] = useState(0)
     const [scoreFalse, setScoreFalse] = useState(0)
 
+    const CARDS = [
+        {
+            category: 'glas',
+            image: cardGreen,
+        },
+        {
+            category: 'werkstoffe',
+            image: cardYellow,
+        },
+        {
+            category: 'papier',
+            image: cardBlue,
+        },
+        {
+            category: 'biogut',
+            image: cardBrown,
+        },
+        {
+            category: 'hausmull',
+            image: cardGrey,
+        },
+    ]
+
     useEffect(() => {
         setGarbageList(generateArrayAndRandomize(allGarbagesObjects))
         setIsReady(true)
@@ -33,8 +56,23 @@ function Game() {
     }, [isReady])
 
     const selectImageGarbage = () => {
-        setGarbage(garbageList[garbageIndex])
-        setGarbageIndex(garbageIndex + 1)
+
+        if (garbageIndex + 1 > garbageList.length - 1) {
+            setGarbage(garbageList[0])
+            setGarbageIndex(0)
+        } else {
+            setGarbage(garbageList[garbageIndex])
+            setGarbageIndex(garbageIndex + 1)
+        }
+
+    }
+
+    const checkAnswer = (category) => {
+        if (category === garbage.category) {
+            setScoreTrue(scoreTrue + 1)
+        }
+        setScoreFalse(scoreFalse + 1)
+        selectImageGarbage()
     }
     return (
         <div className="container content-center">
@@ -42,11 +80,7 @@ function Game() {
                 <Sidebar garbage={garbage} score={scoreTrue} onclickHandler={selectImageGarbage} />
             </div>
             <div className="card-container">
-                <img className="card" src={cardYellow} alt="card-yelow" />
-                <img className="card" src={cardBlue} alt="card-yelow" />
-                <img className="card" src={cardBrown} alt="card-yelow" />
-                <img className="card" src={cardGrey} alt="card-yelow" />
-                <img className="card" src={cardGreen} alt="card-yelow" />
+                {CARDS.map((card, index) => <img key={index} className="card" src={card.image} alt="card-yelow" onClick={() => checkAnswer(card.category)} />)}
             </div>
         </div>
     )

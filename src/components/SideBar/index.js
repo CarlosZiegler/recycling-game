@@ -4,9 +4,6 @@ import RandomImage from '../../assets/random-images/Random-Image.png'
 import './style.css'
 
 function SideBar({ garbage, score, onclickHandler }) {
-    console.log('garbage', garbage)
-
-
 
     return (
         <div className="side-container">

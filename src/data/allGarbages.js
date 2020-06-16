@@ -21,92 +21,74 @@ export const allGarbagesObjects = [
     {
         category: 'glas',
         image: RandomImage,
-        destination: 'green'
     },
     {
         category: 'werkstoffe',
         image: RandomImage1,
-        destination: 'green'
     },
     {
         category: 'werkstoffe',
         image: RandomImage2,
-        destination: 'green'
     },
     {
         category: 'papier',
         image: RandomImage3,
-        destination: 'green'
     },
     {
         category: 'werkstoffe',
         image: RandomImage4,
-        destination: 'green'
     },
     {
         category: 'biogut',
         image: RandomImage5,
-        destination: 'green'
     },
     {
         category: 'werkstoffe',
         image: RandomImage6,
-        destination: 'green'
     },
     {
         category: 'papier',
         image: RandomImage7,
-        destination: 'green'
     },
     {
         category: 'glas',
         image: RandomImage8,
-        destination: 'green'
     },
     {
-        category: 'bio',
+        category: 'biogut',
         image: RandomImage9,
-        destination: 'green'
     },
     {
         category: 'hausmull',
         image: RandomImage10,
-        destination: 'green'
     },
     {
         category: 'papier',
         image: RandomImage11,
-        destination: 'green'
     },
     {
         category: 'hausmull',
         image: RandomImage12,
-        destination: 'green'
     },
     {
         category: 'hausmull',
         image: RandomImage13,
-        destination: 'green'
     },
     {
         category: 'hausmull',
         image: RandomImage14,
-        destination: 'green'
     },
     {
         category: 'hausmull',
         image: RandomImage15,
-        destination: 'green'
     },
     {
         category: 'hausmull',
         image: RandomImage16,
-        destination: 'green'
     },
     {
         category: 'biogut',
         image: RandomImage17,
-        destination: 'green'
     },
 ]
 
