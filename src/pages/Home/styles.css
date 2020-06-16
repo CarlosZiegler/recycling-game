@@ -27,3 +27,37 @@
     margin:10px 0;
     font-size:2rem;
   }
+.result-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+.result-content{
+    display: flex;
+    margin: 25px 0;;
+}
+.result-image{
+    max-width: 600px;
+    margin: 0 auto;
+    margin-right:30px;
+}
+.result-counters{
+    display: flex;
+    flex-direction: column;
+}
+.counter{
+    color: #ffffff;
+    width: 350px;
+    border-radius: 15px;
+    margin: 10px 0;
+    font-size:2rem;
+    padding:20px 10px;
+}
+.correct-counter{
+    background: #72DA7D;
+}
+.wrong-counter{
+    background: #DA7272;
+}

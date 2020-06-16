@@ -10,6 +10,10 @@ import { generateArrayAndRandomize } from '../../utils/helpers'
 
 import correctAnimationData from '../../assets/clear.json'
 import wrongAnimationData from '../../assets/banana-boy.json'
+import sucessData from '../../assets/success.json'
+import losenData from '../../assets/alert.json'
+
+import imageEndGame from '../../assets/image-endgame.png'
 
 import './style.css'
 
@@ -23,6 +27,7 @@ function Game() {
     const [scoreFalse, setScoreFalse] = useState(0)
     const [showResult, setShowResult] = useState(false)
     const [isTrue, setIsTrue] = useState(false)
+    const [gameIsRunning, setgameIsRunning] = useState(true)
 
 
     useEffect(() => {
@@ -44,6 +49,16 @@ function Game() {
         autoplay: true,
         animationData: wrongAnimationData,
     };
+    const defaultOptionsSucessResult = {
+        loop: true,
+        autoplay: true,
+        animationData: sucessData,
+    };
+    const defaultOptionsLosenResult = {
+        loop: true,
+        autoplay: true,
+        animationData: losenData,
+    };
 
 
     const selectImageGarbage = () => {
@@ -64,30 +79,62 @@ function Game() {
             setIsTrue(true)
         } else {
             setIsTrue(false)
+            setScoreFalse(scoreFalse + 1)
         }
         setShowResult(true)
-        setScoreFalse(scoreFalse + 1)
         setTimeout(() => {
             setShowResult(false)
             selectImageGarbage()
         }, 2000);
 
     }
+
+    const endGame = () => {
+        setgameIsRunning(false)
+    }
+
     return (
         <div className="container content-center">
-            <div className="sidebar">
-                <Sidebar garbage={garbage} score={scoreTrue} onclickHandler={selectImageGarbage} />
-            </div>
-            <div className="card-container">
-                {showResult &&
-                    <Lottie className="lottieFile" options={isTrue ? defaultOptionsCorrectAnswer : defaultOptionsWrongAnswer}
-                        height={"auto"}
-                        width={"700px"}
-                    />}
+            {gameIsRunning ? <>
+                <div className="sidebar">
+                    <Sidebar garbage={garbage} score={scoreTrue} onclickHandler={endGame} />
+                </div>
 
-                {!showResult && CARDS.map((card, index) => <Card key={index} card={card} onclickHandler={checkAnswer} />)}
+                <div className="card-container">
+                    {showResult &&
+                        <Lottie className="lottieFile" options={isTrue ? defaultOptionsCorrectAnswer : defaultOptionsWrongAnswer}
+                            height={"auto"}
+                            width={"700px"}
+                        />}
 
-            </div>
+                    {!showResult &&
+                        CARDS.map((card, index) =>
+                            <Card key={index} card={card} onclickHandler={checkAnswer} />
+                        )
+                    }
+
+                </div>
+            </>
+                : <div className="result-container">
+                    <h1 className="title">Result</h1>
+                    <div className="result-content">
+                        <img src={imageEndGame} className="result-image" alt="endgame" />
+                        <div className="result-counters">
+                            <h3 className="counter correct-counter">Correct: {scoreTrue}</h3>
+                            <h3 className="counter wrong-counter">Wrong: {scoreFalse}</h3>
+                            <Lottie className="lottieFile" options={scoreTrue > scoreFalse
+                                ? defaultOptionsSucessResult
+                                : defaultOptionsLosenResult}
+                                height={"auto"}
+                                width={"250px"}
+                            />
+                        </div>
+                    </div>
+                    <a className="btn-primary" href="/game">Go to home</a>
+                </div>
+            }
+
+
         </div>
     )
 }
