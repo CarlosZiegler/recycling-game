@@ -1,92 +1,111 @@
+import RandomImage from '../assets/random-images/Random-Image.png'
+import RandomImage1 from '../assets/random-images/Random-Image1.png'
+import RandomImage2 from '../assets/random-images/Random-Image2.png'
+import RandomImage3 from '../assets/random-images/Random-Image3.png'
+import RandomImage4 from '../assets/random-images/Random-Image4.png'
+import RandomImage5 from '../assets/random-images/Random-Image5.png'
+import RandomImage6 from '../assets/random-images/Random-Image6.png'
+import RandomImage7 from '../assets/random-images/Random-Image7.png'
+import RandomImage8 from '../assets/random-images/Random-Image8.png'
+import RandomImage9 from '../assets/random-images/Random-Image9.png'
+import RandomImage10 from '../assets/random-images/Random-Image10.png'
+import RandomImage11 from '../assets/random-images/Random-Image11.png'
+import RandomImage12 from '../assets/random-images/Random-Image12.png'
+import RandomImage13 from '../assets/random-images/Random-Image13.png'
+import RandomImage14 from '../assets/random-images/Random-Image14.png'
+import RandomImage15 from '../assets/random-images/Random-Image15.png'
+import RandomImage16 from '../assets/random-images/Random-Image16.png'
+import RandomImage17 from '../assets/random-images/Random-Image17.png'
+
 export const allGarbagesObjects = [
     {
-        category: 'Glass',
-        image: 'Random-Image',
+        category: 'glas',
+        image: RandomImage,
         destination: 'green'
     },
     {
-        category: 'paper',
-        image: 'Random-Image1',
+        category: 'werkstoffe',
+        image: RandomImage1,
         destination: 'green'
     },
     {
-        category: 'Mull',
-        image: 'Random-Image2',
+        category: 'werkstoffe',
+        image: RandomImage2,
         destination: 'green'
     },
     {
-        category: 'Food',
-        image: 'Random-Image3',
+        category: 'papier',
+        image: RandomImage3,
         destination: 'green'
     },
     {
-        category: 'Glass',
-        image: 'Random-Image4',
+        category: 'werkstoffe',
+        image: RandomImage4,
         destination: 'green'
     },
     {
-        category: 'Glass',
-        image: 'Random-Image5',
+        category: 'biogut',
+        image: RandomImage5,
         destination: 'green'
     },
     {
-        category: 'Glass',
-        image: 'Random-Image6',
+        category: 'werkstoffe',
+        image: RandomImage6,
         destination: 'green'
     },
     {
-        category: 'Glass',
-        image: 'Random-Image7',
+        category: 'papier',
+        image: RandomImage7,
         destination: 'green'
     },
     {
-        category: 'Glass',
-        image: 'Random-Image8',
+        category: 'glas',
+        image: RandomImage8,
         destination: 'green'
     },
     {
-        category: 'Glass',
-        image: 'Random-Image9',
+        category: 'bio',
+        image: RandomImage9,
         destination: 'green'
     },
     {
-        category: 'Glass',
-        image: 'Random-Image10',
+        category: 'hausmull',
+        image: RandomImage10,
         destination: 'green'
     },
     {
-        category: 'Glass',
-        image: 'Random-Image11',
+        category: 'papier',
+        image: RandomImage11,
         destination: 'green'
     },
     {
-        category: 'Glass',
-        image: 'Random-Image12',
+        category: 'hausmull',
+        image: RandomImage12,
         destination: 'green'
     },
     {
-        category: 'Glass',
-        image: 'Random-Image13',
+        category: 'hausmull',
+        image: RandomImage13,
         destination: 'green'
     },
     {
-        category: 'Glass',
-        image: 'Random-Image14',
+        category: 'hausmull',
+        image: RandomImage14,
         destination: 'green'
     },
     {
-        category: 'Glass',
-        image: 'Random-Image15',
+        category: 'hausmull',
+        image: RandomImage15,
         destination: 'green'
     },
     {
-        category: 'Glass',
-        image: 'Random-Image16',
+        category: 'hausmull',
+        image: RandomImage16,
         destination: 'green'
     },
     {
-        category: 'Glass',
-        image: 'Random-Image17',
+        category: 'biogut',
+        image: RandomImage17,
         destination: 'green'
     },
 ]

@@ -11,20 +11,35 @@ import { allGarbagesObjects } from '../../data/allGarbages'
 import { generateArrayAndRandomize } from '../../utils/helpers'
 
 
+
 import './style.css'
 
 function Game() {
 
     const [garbageList, setGarbageList] = useState([])
     const [garbage, setGarbage] = useState()
+    const [garbageIndex, setGarbageIndex] = useState(0)
+    const [isReady, setIsReady] = useState(false)
+    const [scoreTrue, setScoreTrue] = useState(0)
+    const [scoreFalse, setScoreFalse] = useState(0)
 
     useEffect(() => {
         setGarbageList(generateArrayAndRandomize(allGarbagesObjects))
+        setIsReady(true)
     }, [])
+
+    useEffect(() => {
+        selectImageGarbage()
+    }, [isReady])
+
+    const selectImageGarbage = () => {
+        setGarbage(garbageList[garbageIndex])
+        setGarbageIndex(garbageIndex + 1)
+    }
     return (
         <div className="container content-center">
             <div className="sidebar">
-                <Sidebar garbage={garbageList} />
+                <Sidebar garbage={garbage} score={scoreTrue} onclickHandler={selectImageGarbage} />
             </div>
             <div className="card-container">
                 <img className="card" src={cardYellow} alt="card-yelow" />
