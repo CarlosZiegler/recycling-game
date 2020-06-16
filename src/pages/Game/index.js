@@ -130,7 +130,7 @@ function Game() {
                             />
                         </div>
                     </div>
-                    <a className="btn-primary" href="/game">Go to home</a>
+                    <a className="btn-primary" href="/">Go to home</a>
                 </div>
             }
 
