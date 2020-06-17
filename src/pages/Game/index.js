@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import Lottie from 'react-lottie'
 
@@ -11,7 +12,7 @@ import { generateArrayAndRandomize } from '../../utils/helpers'
 import correctAnimationData from '../../assets/clear.json'
 import wrongAnimationData from '../../assets/banana-boy.json'
 import sucessData from '../../assets/success.json'
-import losenData from '../../assets/alert.json'
+import loserData from '../../assets/alert.json'
 
 import imageEndGame from '../../assets/image-endgame.png'
 
@@ -27,8 +28,33 @@ function Game() {
     const [scoreFalse, setScoreFalse] = useState(0)
     const [showResult, setShowResult] = useState(false)
     const [isTrue, setIsTrue] = useState(false)
-    const [gameIsRunning, setgameIsRunning] = useState(true)
+    const [gameIsRunning, setGameIsRunning] = useState(true)
 
+
+
+    const defaultOptionsCorrectAnswer = {
+        loop: true,
+        autoplay: true,
+        animationData: correctAnimationData,
+
+    };
+    const defaultOptionsWrongAnswer = {
+        loop: true,
+        autoplay: true,
+        animationData: wrongAnimationData,
+
+    };
+    const defaultOptionsSucessResult = {
+        loop: true,
+        autoplay: true,
+        animationData: sucessData,
+
+    };
+    const defaultOptionsLosenResult = {
+        loop: true,
+        autoplay: true,
+        animationData: loserData,
+    };
 
     useEffect(() => {
         setGarbageList(generateArrayAndRandomize(allGarbagesObjects))
@@ -38,27 +64,6 @@ function Game() {
     useEffect(() => {
         selectImageGarbage()
     }, [isDataLoaded])
-
-    const defaultOptionsCorrectAnswer = {
-        loop: true,
-        autoplay: true,
-        animationData: correctAnimationData,
-    };
-    const defaultOptionsWrongAnswer = {
-        loop: true,
-        autoplay: true,
-        animationData: wrongAnimationData,
-    };
-    const defaultOptionsSucessResult = {
-        loop: true,
-        autoplay: true,
-        animationData: sucessData,
-    };
-    const defaultOptionsLosenResult = {
-        loop: true,
-        autoplay: true,
-        animationData: losenData,
-    };
 
 
     const selectImageGarbage = () => {
@@ -86,11 +91,10 @@ function Game() {
             selectImageGarbage()
             setShowResult(false)
         }, 2000);
-
     }
 
     const endGame = () => {
-        setgameIsRunning(false)
+        setGameIsRunning(false)
     }
 
     return (
@@ -105,6 +109,7 @@ function Game() {
                         <Lottie className="lottieFile" options={isTrue ? defaultOptionsCorrectAnswer : defaultOptionsWrongAnswer}
                             height={"auto"}
                             width={"700px"}
+                            isClickToPauseDisabled={true}
                         />}
 
                     {!showResult &&
@@ -116,25 +121,30 @@ function Game() {
                 </div>
             </>
                 : <div className="result-container">
-                    <h1 className="title">Result</h1>
+                    <h1 className="title">RESULT</h1>
                     <div className="result-content">
                         <img src={imageEndGame} className="result-image" alt="endgame" />
                         <div className="result-counters">
                             <h3 className="counter correct-counter">Correct: {scoreTrue}</h3>
                             <h3 className="counter wrong-counter">Wrong: {scoreFalse}</h3>
+                            {scoreTrue > scoreFalse
+                                ? <p className="result-text green">Perfect, your learning a lot</p>
+                                : <p className="result-text red">You made a lot of mistakes, try again!</p>
+
+                            }
                             <Lottie className="lottieFile" options={scoreTrue > scoreFalse
                                 ? defaultOptionsSucessResult
                                 : defaultOptionsLosenResult}
                                 height={"auto"}
                                 width={"250px"}
+                                isClickToPauseDisabled={true}
                             />
+
                         </div>
                     </div>
                     <a className="btn-primary" href="/">Go to home</a>
                 </div>
             }
-
-
         </div>
     )
 }

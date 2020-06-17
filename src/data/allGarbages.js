@@ -87,7 +87,7 @@ export const allGarbagesObjects = [
         image: RandomImage16,
     },
     {
-        category: 'biogut',
+        category: 'glas',
         image: RandomImage17,
     },
 ]
