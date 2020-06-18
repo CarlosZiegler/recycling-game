@@ -1,15 +1,33 @@
 import React from 'react'
+import Lottie from 'react-lottie'
 import { Flyers } from '../../data/flyer'
+import ecoletaData from '../../assets/ecoleta.json'
 
 
 import './styles.css'
 
 function Home() {
+
+    const defaultOptionsEcoleta = {
+        loop: true,
+        autoplay: true,
+        animationData: ecoletaData,
+
+    };
+
     return (
         <>
             <div className="container">
                 <div className="content">
                     <h1 className="title"> Learn about recycling</h1>
+                    <div className="animation">
+                        <Lottie options={defaultOptionsEcoleta}
+                            height={"auto"}
+                            width={"600px"}
+                            isClickToPauseDisabled={true}
+                        />
+                    </div>
+
                     <p className="description">
                         Do you know how to recycle your garbage? If you already know this congratulations!
                         If you don't know yet, let's learn! Read the brochure and test your knowledge!

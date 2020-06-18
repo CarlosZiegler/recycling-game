@@ -74,7 +74,13 @@
     display: flex;
     margin: 25px 0;;
 }
+
 .result-image{
+    max-width: 700px;
+    margin: 0 auto;
+    margin-right:30px;
+}
+.animation-result{
     max-width: 700px;
     margin: 0 auto;
     margin-right:30px;
@@ -108,4 +114,25 @@
 }
 .green{
     color:#007b0c;
+}
+
+@media (max-width: 750px){
+    .result-content{
+        display: flex;
+        flex-direction: column;
+        margin: 25px 0;
+        justify-content:center;
+        align-items: center;
+        align-content: center;
+    }
+    .result-image{
+        max-width: 300px;
+        margin: 0 auto;
+        margin-right:30px;
+        padding:10px;
+    }
+    .animation-result{
+        max-width: 400px;
+        margin:0 auto;
+    }
 }

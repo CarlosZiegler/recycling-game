@@ -13,6 +13,8 @@ import correctAnimationData from '../../assets/clear.json'
 import wrongAnimationData from '../../assets/banana-boy.json'
 import sucessData from '../../assets/success.json'
 import loserData from '../../assets/alert.json'
+import dancingLoser from '../../assets/dancing.json'
+import natureData from '../../assets/nature.json'
 
 import imageEndGame from '../../assets/image-endgame.png'
 
@@ -32,6 +34,18 @@ function Game() {
 
 
 
+    const defaultOptionsNature = {
+        loop: true,
+        autoplay: true,
+        animationData: natureData,
+
+    };
+    const defaultOptionsDancing = {
+        loop: true,
+        autoplay: true,
+        animationData: dancingLoser,
+
+    };
     const defaultOptionsCorrectAnswer = {
         loop: true,
         autoplay: true,
@@ -129,7 +143,16 @@ function Game() {
                 : <div className="result-container">
                     <h1 className="title">RESULT</h1>
                     <div className="result-content">
-                        <img src={imageEndGame} className="result-image" alt="endgame" />
+                        <div className="animation-result">
+                            <Lottie className="lottieFile" options={scoreTrue > scoreFalse
+                                ? defaultOptionsNature
+                                : defaultOptionsDancing}
+                                height={"auto"}
+                                width={"600px"}
+                                isClickToPauseDisabled={true}
+                            />
+                        </div>
+
                         <div className="result-counters">
                             <h3 className="counter correct-counter">Correct: {scoreTrue}</h3>
                             <h3 className="counter wrong-counter">Wrong: {scoreFalse}</h3>

@@ -12,10 +12,17 @@
     text-transform: uppercase;
     text-align: center;
 }
+.animation{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
 .description{
     color: #6D6D6D;
     text-align:center;
-    margin: 10px 0;
+    margin: 0;
     padding: 0 30px;
     font-size: 1.5rem;
 }
@@ -76,5 +83,15 @@
 }
 .flyer-grey{
     background:#D5DFE4;
+}
+@media (max-width: 750px){
+    .animation{
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        padding-right: 50px;
+    }
 }
 
