@@ -90,11 +90,17 @@ function Game() {
         setTimeout(() => {
             selectImageGarbage()
             setShowResult(false)
+            topFunction()
         }, 2000);
     }
 
     const endGame = () => {
         setGameIsRunning(false)
+    }
+
+    const topFunction = () => {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 
     return (
@@ -108,7 +114,7 @@ function Game() {
                     {showResult &&
                         <Lottie className="lottieFile" options={isTrue ? defaultOptionsCorrectAnswer : defaultOptionsWrongAnswer}
                             height={"auto"}
-                            width={"700px"}
+                            width={"600px"}
                             isClickToPauseDisabled={true}
                         />}
 
