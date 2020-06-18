@@ -15,54 +15,35 @@ export const Flyers = [
     {
         header: headerYellow,
         body: bodyYellow,
-        text: `Plastic, for example:
-        Yogurt mug
-        Toothbrush
-        Metals, for example:
-        Canned food can
-        Cooking pot
-        Beverage carton`,
+        text: `Plastic: eg. yogurt cup, toothbrush.
+        Metal: eg. can, pot
+        Drink packaging`,
         style: 'flyer-yellow'
     },
     {
         header: headerBlue,
         body: bodyBlue,
-        text: `Glass bottles, for example:
-        beverages, oil, sauce.
-        Glasses, for example:
-        Baby food
-        Preserved jar`,
+        text: `Paper:
+        newspapers, cardboard, book, brochure, paper packaging`,
         style: 'flyer-blue'
     },
     {
         header: headerGreen,
         body: bodyGreen,
-        text: `Newspapers
-        Paper packaging
-        Brochures
-        Cardboard boxes
-        Books`,
+        text: `Glass container without : wine bottle, oil bottle, jar`,
         style: 'flyer-green'
     },
     {
         header: headerGrey,
         body: bodyGrey,
-        text: `Leftovers
-        also cooked
-        Fruit and vegetable leftovers
-        Tea and coffee filters
-        Flowers
-        Garden waste`,
+        text: `Hygiene products, used sponge, diaper, wallpaper, broken dish, clothing`,
         style: 'flyer-grey'
     },
     {
         header: headerBrown,
         body: bodyBrown,
-        text: `Hygiene products
-        Vacuum cleaner bag
-        dishes
-        Diapers
-        Wallpaper`,
+        text: `Leftovers: cooked fruits and vegetables, tea and coffee
+        Flowers, garden waste `,
         style: 'flyer-brown'
     },
 
