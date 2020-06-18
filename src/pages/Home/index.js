@@ -1,5 +1,6 @@
 import React from 'react'
-import FlyerImage from '../../assets/flyer.png'
+import { Flyers } from '../../data/flyer'
+
 
 import './styles.css'
 
@@ -12,8 +13,16 @@ function Home() {
                     <p className="description">
                         Do you know how to recycle your garbage? If you already know this congratulations!
                         If you don't know yet, let's learn! Read the brochure and test your knowledge!
-                </p>
-                    <img className="flyer" src={FlyerImage} alt="flyer-base" />
+                    </p>
+                    <div className="flyer-container">
+                        {Flyers && Flyers.map(flyer =>
+                            <div className="flyer-item-container">
+                                <img className="flyer-header" src={flyer.header} alt="header flyer" />
+                                <p className={`flyer-text ${flyer.style}`}>{flyer.text}</p>
+                                <img className="flyer-body" src={flyer.body} alt="body flyer" />
+                            </div>
+                        )}
+                    </div>
                     <a className="btn-primary" href="/game">Play Game</a>
                 </div>
             </div >
