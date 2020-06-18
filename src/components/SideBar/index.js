@@ -2,6 +2,7 @@ import React from 'react'
 
 import './style.css'
 
+//component Sidebar render image and a score, use a props for onclick function and set a score
 function SideBar({ garbage, score, onclickHandler }) {
 
     return (

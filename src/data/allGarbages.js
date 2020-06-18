@@ -1,3 +1,4 @@
+//import images
 import RandomImage from '../assets/random-images/Random-Image.png'
 import RandomImage1 from '../assets/random-images/Random-Image1.png'
 import RandomImage2 from '../assets/random-images/Random-Image2.png'
@@ -17,6 +18,7 @@ import RandomImage15 from '../assets/random-images/Random-Image15.png'
 import RandomImage16 from '../assets/random-images/Random-Image16.png'
 import RandomImage17 from '../assets/random-images/Random-Image17.png'
 
+//create object Garbages with image and category
 export const allGarbagesObjects = [
     {
         category: 'glas',
@@ -92,4 +94,5 @@ export const allGarbagesObjects = [
     },
 ]
 
+//export object
 export default { allGarbagesObjects }

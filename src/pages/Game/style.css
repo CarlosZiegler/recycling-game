@@ -17,6 +17,39 @@
     .sidebar{
         max-width:600px;
     }
+    .card{
+        width: 100%;
+        max-width: 100px;
+        margin:10px;
+        box-shadow: 4px 6px 5px 0px rgba(168,168,168,1);
+        float: left;
+        position: relative;
+        top: 0;
+        cursor: pointer;
+        border: none;
+        border-radius: 15px;
+        /* Smoothing out hover using css3 transitions, if not, the pressed button effect looks a bit hard */
+        transition: all 0.2s ease;
+    
+        /* Size */
+        line-height: 45px;
+        
+        font-size: 120%;
+    
+        /* Colors */
+        background: #f7f7f7;
+        box-shadow: 0 6px rgba(0, 0, 0, 0.2);
+        color: #888;
+        
+    }
+    .card:hover{
+        box-shadow: 0 10px #000;    
+    
+    }
+    .card:active{
+        top: 5px;
+      box-shadow: none;
+    }
 }
 .sidebar{
     max-width:300px;
@@ -27,8 +60,6 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    /* max-height: 700px;
-    min-width: 690px; */
 }
 .card{
     width: 100%;
@@ -41,15 +72,9 @@
     cursor: pointer;
     border: none;
     border-radius: 15px;
-    /* Smoothing out hover using css3 transitions, if not, the pressed button effect looks a bit hard */
     transition: all 0.2s ease;
-
-    /* Size */
     line-height: 45px;
-    
     font-size: 120%;
-
-    /* Colors */
     background: #f7f7f7;
     box-shadow: 0 6px rgba(0, 0, 0, 0.2);
     color: #888;
@@ -57,11 +82,10 @@
 }
 .card:hover{
     box-shadow: 0 10px #000;    
-
 }
 .card:active{
     top: 5px;
-  box-shadow: none;
+    box-shadow: none;
 }
 .result-container{
     display: flex;

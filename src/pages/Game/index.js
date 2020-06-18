@@ -2,13 +2,16 @@
 import React, { useState, useEffect } from 'react'
 import Lottie from 'react-lottie'
 
+//component imports
 import Sidebar from '../../components/SideBar'
 import Card from '../../components/Card'
 
+//data imports
 import { allGarbagesObjects } from '../../data/allGarbages'
 import { CARDS } from '../../data/allCards'
 import { generateArrayAndRandomize } from '../../utils/helpers'
 
+//Lotties imports
 import correctAnimationData from '../../assets/clear.json'
 import wrongAnimationData from '../../assets/banana-boy.json'
 import sucessData from '../../assets/success.json'
@@ -16,12 +19,12 @@ import loserData from '../../assets/alert.json'
 import dancingLoser from '../../assets/dancing.json'
 import natureData from '../../assets/nature.json'
 
-import imageEndGame from '../../assets/image-endgame.png'
-
+//import style
 import './style.css'
 
 function Game() {
 
+    //setting states
     const [garbageList, setGarbageList] = useState([])
     const [garbage, setGarbage] = useState()
     const [garbageIndex, setGarbageIndex] = useState(0)
@@ -32,54 +35,61 @@ function Game() {
     const [isTrue, setIsTrue] = useState(false)
     const [gameIsRunning, setGameIsRunning] = useState(true)
 
-
-
+    //config lottie file
     const defaultOptionsNature = {
         loop: true,
         autoplay: true,
         animationData: natureData,
 
     };
+    //config lottie file
     const defaultOptionsDancing = {
         loop: true,
         autoplay: true,
         animationData: dancingLoser,
 
     };
+    //config lottie file
     const defaultOptionsCorrectAnswer = {
         loop: true,
         autoplay: true,
         animationData: correctAnimationData,
 
     };
+    //config lottie file
     const defaultOptionsWrongAnswer = {
         loop: true,
         autoplay: true,
         animationData: wrongAnimationData,
 
     };
+    //config lottie file
     const defaultOptionsSucessResult = {
         loop: true,
         autoplay: true,
         animationData: sucessData,
 
     };
+    //config lottie file
     const defaultOptionsLosenResult = {
         loop: true,
         autoplay: true,
         animationData: loserData,
     };
 
+    //fetching garbage with random sort
     useEffect(() => {
         setGarbageList(generateArrayAndRandomize(allGarbagesObjects))
         setIsDataLoaded(true)
     }, [])
 
+    //calling selectImageGarbage() if data was loaded
     useEffect(() => {
         selectImageGarbage()
     }, [isDataLoaded])
 
 
+    // function to set garbage Image and set the actuell index for a next selection
     const selectImageGarbage = () => {
 
         if (garbageIndex + 1 > garbageList.length - 1) {
@@ -92,6 +102,7 @@ function Game() {
 
     }
 
+    // check matchers betwen image and cards, update score ,save results, set states
     const checkAnswer = (category) => {
         if (category === garbage.category) {
             setScoreTrue(scoreTrue + 1)
@@ -108,16 +119,19 @@ function Game() {
         }, 2000);
     }
 
+    // go to results
     const endGame = () => {
         setGameIsRunning(false)
         topFunction()
     }
 
+    //scrollTop
     const topFunction = () => {
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 
+    //render view
     return (
         <div className="container content-center">
             {gameIsRunning ? <>

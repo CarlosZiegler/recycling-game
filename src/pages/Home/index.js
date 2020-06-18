@@ -1,13 +1,17 @@
 import React from 'react'
 import Lottie from 'react-lottie'
-import { Flyers } from '../../data/flyer'
-import ecoletaData from '../../assets/ecoleta.json'
 
+//import data
+import { Flyers } from '../../data/flyer'
+
+//import Lottie
+import ecoletaData from '../../assets/ecoleta.json'
 
 import './styles.css'
 
 function Home() {
 
+    //config lottie
     const defaultOptionsEcoleta = {
         loop: true,
         autoplay: true,
@@ -15,6 +19,7 @@ function Home() {
 
     };
 
+    //render view
     return (
         <>
             <div className="container">
@@ -33,8 +38,8 @@ function Home() {
                         If you don't know yet, let's learn! Read the brochure and test your knowledge!
                     </p>
                     <div className="flyer-container">
-                        {Flyers && Flyers.map(flyer =>
-                            <div className="flyer-item-container">
+                        {Flyers && Flyers.map((flyer, index) =>
+                            <div key={index} className="flyer-item-container">
                                 <img className="flyer-header" src={flyer.header} alt="header flyer" />
                                 <p className={`flyer-text ${flyer.style}`}>{flyer.text}</p>
                                 <img className="flyer-body" src={flyer.body} alt="body flyer" />

@@ -1,3 +1,4 @@
+//import images
 import headerYellow from '../assets/flyer/headerYellow.png'
 import headerBlue from '../assets/flyer/headerBlue.png'
 import headerGreen from '../assets/flyer/headerGreen.png'
@@ -9,6 +10,7 @@ import bodyGreen from '../assets/flyer/bodyGreen.png'
 import bodyBrown from '../assets/flyer/bodyBrown.png'
 import bodyGrey from '../assets/flyer/bodyGrey.png'
 
+// create a object wit images and text for a flyers
 export const Flyers = [
     {
         header: headerYellow,
