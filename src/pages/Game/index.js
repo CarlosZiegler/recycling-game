@@ -110,6 +110,7 @@ function Game() {
 
     const endGame = () => {
         setGameIsRunning(false)
+        topFunction()
     }
 
     const topFunction = () => {
