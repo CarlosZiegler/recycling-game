@@ -17,7 +17,7 @@ import wrongAnimationData from '../../assets/banana-boy.json'
 import sucessData from '../../assets/success.json'
 import loserData from '../../assets/alert.json'
 import dancingLoser from '../../assets/dancing.json'
-import natureData from '../../assets/nature.json'
+import natureData from '../../assets/winners.json'
 
 //import style
 import './style.css'
