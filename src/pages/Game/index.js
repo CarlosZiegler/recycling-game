@@ -163,7 +163,7 @@ function Game() {
                                 ? defaultOptionsNature
                                 : defaultOptionsDancing}
                                 height={"auto"}
-                                width={"600px"}
+                                width={"auto"}
                                 isClickToPauseDisabled={true}
                             />
                         </div>
